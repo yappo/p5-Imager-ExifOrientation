@@ -69,7 +69,3 @@ run_test(0, 0, '#ff0000');
 run_test(29, 0, '#00ff00');
 run_test(29, 39, '#0000ff');
 run_test(0, 39, '#ffff00');
-
-
-$image->flip(dir=>"v");
-$image->write( file => "/tmp/hoge.jpg" );
