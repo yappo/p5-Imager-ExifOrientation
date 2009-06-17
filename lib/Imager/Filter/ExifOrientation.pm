@@ -65,7 +65,7 @@ use file path
   my $img = Imager->new;
   $img->filter(
       type => 'exif_orientation',
-      path => 'foo.jpeg',
+      path => 'foo.jpg',
   );
 
 use jpeg data
