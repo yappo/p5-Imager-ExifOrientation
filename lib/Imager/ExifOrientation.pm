@@ -42,14 +42,14 @@ sub get_orientation_by_exiftool {
 }
 
 my $rotate_maps = {
-    1 => { degrees => 0,   mirror => undef }, # Horizontal (normal)
-    2 => { degrees => 0,   mirror => 'h'   }, # Mirror horizontal
-    3 => { degrees => 0,   mirror => 'hv'  }, # Rotate 180 (rotate is too noisy)
-    4 => { degrees => 0,   mirror => 'v'   }, # Mirror vertical
-    5 => { degrees => 270, mirror => 'h'   }, # Mirror horizontal and rotate 270 CW
-    6 => { degrees => 90,  mirror => undef }, # Rotate 90 CW
-    7 => { degrees => 90,  mirror => 'h'   }, # Mirror horizontal and rotate 90 CW
-    8 => { degrees => 270, mirror => undef }, # Rotate 270 CW
+    1 => { right => 0,   mirror => undef }, # Horizontal (normal)
+    2 => { right => 0,   mirror => 'h'   }, # Mirror horizontal
+    3 => { right => 0,   mirror => 'hv'  }, # Rotate 180 (rotate is too noisy)
+    4 => { right => 0,   mirror => 'v'   }, # Mirror vertical
+    5 => { right => 270, mirror => 'h'   }, # Mirror horizontal and rotate 270 CW
+    6 => { right => 90,  mirror => undef }, # Rotate 90 CW
+    7 => { right => 90,  mirror => 'h'   }, # Mirror horizontal and rotate 90 CW
+    8 => { right => 270, mirror => undef }, # Rotate 270 CW
 };
 
 sub _rotate {
@@ -60,8 +60,8 @@ sub _rotate {
         $img->flip( dir => $map->{mirror} );
     }
 
-    if ($map->{degrees}) {
-        return $img->rotate( degrees => $map->{degrees} );
+    if ($map->{right}) {
+        return $img->rotate( right => $map->{right} );
     }
 
     $img;
