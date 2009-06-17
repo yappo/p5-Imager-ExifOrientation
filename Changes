@@ -1,4 +1,7 @@
 Revision history for Perl extension Imager::ExifOrientation
 
+0.02    2009-06-17T10:57:03+09:00
+        - add does not have libjpeg test
+
 0.01    2009-06-16T20:30:38+09:00
         - original version
