@@ -45,7 +45,7 @@ sub is_rotated {
     for my $x (($map->{x}-1)..($map->{x}+1)) {
         for my $y (($map->{y}-1)..($map->{y}+1)) {
             my @color = $image->getpixel( x => $x, y => $y )->rgba;
-            ::ok($color[0] > $color[1]+200, "$orientation: $x, $y is R($color[0]) > G($color[1]+100)");
+            ::ok($color[0] > $color[1]+100, "$orientation: $x, $y is R($color[0]) > G($color[1]+100)");
             ::ok($color[0] > $color[2]+200, "$orientation: $x, $y is R($color[0]) > B($color[2]+200)");
         }
     }
