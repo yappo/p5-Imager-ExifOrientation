@@ -1,5 +1,8 @@
 Revision history for Perl extension Imager::ExifOrientation
 
+0.03    2009-06-17T15:40:33+09:00
+        - change Imager rotate options s/degrees/right/
+
 0.02    2009-06-17T10:57:03+09:00
         - add does not have libjpeg test
 
