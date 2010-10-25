@@ -2,7 +2,7 @@ use inc::Module::Install;
 name 'Imager-ExifOrientation';
 all_from 'lib/Imager/ExifOrientation.pm';
 
-requires 'Imager';
+requires 'Imager' => 0.38; # requires Imager::Color
 requires 'Image::ExifTool';
 
 tests 't/*.t';
