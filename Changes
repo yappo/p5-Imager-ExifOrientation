@@ -1,5 +1,9 @@
 Revision history for Perl extension Imager::ExifOrientation
 
+0.05    2010-11-26T13:10:36+09:00
+        - fixed docs # tokuhirom++
+        - mager 0.38 or later is required to use Imager::Color # tokuhirom++
+
 0.04    2010-03-08T19:47:32+09:00
         - fixed to test value range
 
