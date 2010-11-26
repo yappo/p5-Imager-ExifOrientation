@@ -5,7 +5,7 @@ our $VERSION = '0.01';
 
 use Carp;
 use Imager::ExifOrientation;
-use Image::ExifTool 'ImageInfo';
+use Image::ExifTool ();
 
 Imager->register_filter(
     type     => 'exif_orientation',
@@ -21,6 +21,7 @@ Imager->register_filter(
 
 sub exif_orientation {
     my %args = @_;
+
     my $orientation;
 
     if ($args{orientation}) {
@@ -29,14 +30,17 @@ sub exif_orientation {
         my $exif;
         if ($args{exif}) {
             $exif = $args{exif};
+            $orientation = Imager::ExifOrientation->get_orientation_by_exiftool($exif);
         } elsif ($args{data}) {
-            $exif = ImageInfo(\$args{data});
+            $exif = Image::ExifTool::ImageInfo(\$args{data});
+            $orientation = Imager::ExifOrientation->get_orientation_by_exiftool($exif);
         } elsif ($args{path}) {
-            $exif = ImageInfo($args{path});
+            $exif = Image::ExifTool::ImageInfo($args{path});
+            $orientation = Imager::ExifOrientation->get_orientation_by_exiftool($exif);
         } else {
-            die "orientation or exif or data or path is required";
+            $orientation = $args{imager}->tags(name => 'exif_orientation');
+            return unless defined $orientation; # there is no orientation information
         }
-        $orientation = Imager::ExifOrientation->get_orientation_by_exiftool($exif);
     }
 
     my $img = Imager::ExifOrientation->_rotate(
