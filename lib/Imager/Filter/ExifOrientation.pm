@@ -60,7 +60,7 @@ Imager::Filter::ExifOrientation - Imager::ExifOrientation for Imager Filter
 use file path
 
   use Imager;
-  use Imager::ExifOrientation;
+  use Imager::Filter::ExifOrientation;
 
   my $img = Imager->new;
   $img->filter(
@@ -71,7 +71,7 @@ use file path
 use jpeg data
 
   use Imager;
-  use Imager::ExifOrientation;
+  use Imager::Filter::ExifOrientation;
 
   my $jpeg_data = do {
       open my $fh, '<', 'foo.jpg';
@@ -86,7 +86,7 @@ use jpeg data
 use exif hash
 
   use Imager;
-  use Imager::ExifOrientation;
+  use Imager::Filter::ExifOrientation;
   use Image::ExifTool 'ImageInfo';
 
   my $exif  = ImageInfo('foo.jpg');
@@ -98,7 +98,7 @@ use exif hash
 use orientation number
 
   use Imager;
-  use Imager::ExifOrientation;
+  use Imager::Filter::ExifOrientation;
 
   $img->filter(
       type        => 'exif_orientation',
