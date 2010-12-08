@@ -24,6 +24,7 @@ t/03_filter_path.t
 t/04_filter_data.t
 t/05_filter_exif.t
 t/06_filter_orientation.t
+t/07_filter_imager.t
 t/images/original/1.jpg
 t/images/original/2.jpg
 t/images/original/3.jpg

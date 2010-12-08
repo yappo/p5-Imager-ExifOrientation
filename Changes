@@ -1,5 +1,8 @@
 Revision history for Perl extension Imager::ExifOrientation
 
+0.06    2010-12-08T16:55:00+09:00
+        - added read exif without Image::ExifTool mode
+
 0.05    2010-11-26T13:10:36+09:00
         - fixed docs # tokuhirom++
         - mager 0.38 or later is required to use Imager::Color # tokuhirom++
