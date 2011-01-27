@@ -1,4 +1,4 @@
-use t::Utils want_jpeg => 0;
+use t::Utils want_jpeg => 1;
 use Test::More tests => 162;
 
 use Imager;
